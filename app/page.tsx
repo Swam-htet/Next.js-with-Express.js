@@ -1,10 +1,10 @@
-/* Components */
-import { Counter } from './components/Counter/Counter'
 
 export default function IndexPage() {
-  return <Counter />
+  return (<div>
+    <button className={'btn btn-outline-danger'}>CLick Here</button>
+  </div>)
 }
 
 export const metadata = {
-  title: 'Redux Toolkit',
+  title: 'Redux Express',
 }

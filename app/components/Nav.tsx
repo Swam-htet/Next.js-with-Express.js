@@ -1,31 +1,22 @@
 'use client'
 
-/* Core */
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import {Container, Nav, Navbar, NavDropdown} from "react-bootstrap";
 
-/* Instruments */
-import styles from '../styles/layout.module.css'
-
-export const Nav = () => {
-  const pathname = usePathname()
+export const NavBar = () => {
 
   return (
-    <nav className={styles.nav}>
-      <Link
-        className={`${styles.link} ${pathname === '/' ? styles.active : ''}`}
-        href="/"
-      >
-        Home
-      </Link>
-      <Link
-        className={`${styles.link} ${
-          pathname === '/verify' ? styles.active : ''
-        }`}
-        href="/verify"
-      >
-        Verify
-      </Link>
-    </nav>
+      <Navbar expand="lg" className="bg-body-tertiary">
+          <Container>
+              <Navbar.Brand href="#home">ReduxExpress</Navbar.Brand>
+              <Navbar.Toggle aria-controls="basic-navbar-nav" />
+              <Navbar.Collapse id="basic-navbar-nav">
+                  <Nav className="me-auto">
+                      <Nav.Link href="/">Home</Nav.Link>
+                      <Nav.Link href="/employees">Employees</Nav.Link>
+                  </Nav>
+              </Navbar.Collapse>
+          </Container>
+      </Navbar>
   )
 }
